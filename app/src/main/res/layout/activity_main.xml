@@ -107,35 +107,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvProductVariant" />
 
-            <!--        <com.google.android.material.chip.Chip-->
-            <!--            android:id="@+id/chipDiscount"-->
-            <!--            style="@style/Widget.MaterialComponents.Chip.Action"-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="match_parent"-->
-            <!--            android:text="24%"-->
-            <!--            android:textColor="#450a0a"-->
-            <!--            android:textSize="12sp"-->
-            <!--            app:chipBackgroundColor="#fecaca"-->
-            <!--            app:chipMinHeight="24dp"-->
-            <!--            app:chipMinTouchTargetSize="40dp"-->
-            <!--            app:layout_constraintStart_toStartOf="@id/tvProductPrice"-->
-            <!--            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice" />-->
-
-            <!--        <TextView-->
-            <!--            android:id="@+id/tvDiscountPrice"-->
-            <!--            android:layout_width="wrap_content"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:layout_marginStart="8dp"-->
-            <!--            android:layout_marginEnd="16dp"-->
-            <!--            android:text="@string/discountPrice"-->
-            <!--            android:textColor="#808990"-->
-            <!--            android:textSize="14sp"-->
-            <!--            app:layout_constraintBottom_toBottomOf="@id/chipDiscount"-->
-            <!--            app:layout_constraintStart_toEndOf="@id/chipDiscount"-->
-            <!--            app:layout_constraintTop_toTopOf="@id/chipDiscount"-->
-            <!--            app:layout_constraintStart_toStartOf="@id/tvProductPrice"-->
-            <!--            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice"/>-->
-
             <TextView
                 android:id="@+id/tvDiscountPrice"
                 android:layout_width="wrap_content"
