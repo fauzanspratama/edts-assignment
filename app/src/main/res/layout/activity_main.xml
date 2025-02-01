@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/footerLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivProduct"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:src="@drawable/image_product"
+                app:layout_constraintDimensionRatio="1:1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iconButtonFavorit"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:contentDescription="Button Favorit"
+                app:icon="@drawable/favorite"
+                app:iconSize="24dp"
+                app:iconTint="#808990"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/iconButtonShare2"
+                style="?attr/materialIconButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Share shopping cart"
+                app:icon="@drawable/share"
+                app:iconSize="24dp"
+                app:iconTint="#808990"
+                app:layout_constraintBottom_toBottomOf="@+id/iconButtonFavorit"
+                app:layout_constraintEnd_toStartOf="@+id/iconButtonFavorit"
+                app:layout_constraintTop_toTopOf="@+id/iconButtonFavorit" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/ivProduct" />
+
+            <TextView
+                android:id="@+id/tvProductName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:lineHeight="24sp"
+                android:text="Greenfields Keju Mozzarella 200 gr"
+                android:textColor="#242628"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivProduct" />
+
+            <TextView
+                android:id="@+id/tvProductVariant"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="200 gr / pack"
+                android:textColor="#808990"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProductName" />
+
+            <TextView
+                android:id="@+id/tvProductPrice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:lineHeight="24sp"
+                android:text="Rp97.300"
+                android:textColor="#242628"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductVariant" />
+
+            <!--        <com.google.android.material.chip.Chip-->
+            <!--            android:id="@+id/chipDiscount"-->
+            <!--            style="@style/Widget.MaterialComponents.Chip.Action"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="match_parent"-->
+            <!--            android:text="24%"-->
+            <!--            android:textColor="#450a0a"-->
+            <!--            android:textSize="12sp"-->
+            <!--            app:chipBackgroundColor="#fecaca"-->
+            <!--            app:chipMinHeight="24dp"-->
+            <!--            app:chipMinTouchTargetSize="40dp"-->
+            <!--            app:layout_constraintStart_toStartOf="@id/tvProductPrice"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice" />-->
+
+            <!--        <TextView-->
+            <!--            android:id="@+id/tvDiscountPrice"-->
+            <!--            android:layout_width="wrap_content"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_marginStart="8dp"-->
+            <!--            android:layout_marginEnd="16dp"-->
+            <!--            android:text="@string/discountPrice"-->
+            <!--            android:textColor="#808990"-->
+            <!--            android:textSize="14sp"-->
+            <!--            app:layout_constraintBottom_toBottomOf="@id/chipDiscount"-->
+            <!--            app:layout_constraintStart_toEndOf="@id/chipDiscount"-->
+            <!--            app:layout_constraintTop_toTopOf="@id/chipDiscount"-->
+            <!--            app:layout_constraintStart_toStartOf="@id/tvProductPrice"-->
+            <!--            app:layout_constraintTop_toBottomOf="@+id/tvProductPrice"/>-->
+
+            <TextView
+                android:id="@+id/tvDiscountPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="@string/discountPrice"
+                android:textColor="#808990"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/tvProductPrice"
+                app:layout_constraintTop_toBottomOf="@+id/tvProductPrice" />
+
+            <TextView
+                android:id="@+id/tvDiscountPrice2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="24%"
+                android:textColor="#dc2626"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvDiscountPrice"
+                app:layout_constraintStart_toEndOf="@id/tvDiscountPrice"
+                app:layout_constraintTop_toTopOf="@id/tvDiscountPrice" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/tvDiscountPrice2" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upsellSectionContainer1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_upsell"
+                android:paddingBottom="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/dividerDescription">
+
+                <TextView
+                    android:id="@+id/tvTitleUpsellProduct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Yang lain beli ini juga!"
+                    android:textColor="#242628"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvListUpsellProduct1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleUpsellProduct"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleUpsellProduct" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerUpsellProduct1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/upsellSectionContainer1" />
+
+            <TextView
+                android:id="@+id/tvTitleDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Description"
+                android:textColor="#242628"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerUpsellProduct1" />
+
+            <TextView
+                android:id="@+id/tvProductDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Susu Full Cream dengan rasa yang segar tapi tetap ringan dan tidak ‘enek’. Kandungan lemak utuh (3.5%) seperti pada kandungan susu segar tanpa pengurangan/penambahan apa pun bermanfaat untuk menjaga daya tahan tubuh."
+                android:textColor="#565C64"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleDescription" />
+
+            <TextView
+                android:id="@+id/tvProductDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Kesegaran dan nutrisi alami adalah hal yang terpenting untuk produk susu segar Greenfields. Greenfields Fresh Milk memberikan kebaikan 100% susu sapi segar dengan rasa susu yang utuh melalui proses pasteurisasi."
+                android:textColor="#565C64"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvProductDescription1" />
+
+            <Button
+                android:id="@+id/textButton"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dm_sans_bold"
+                android:minHeight="24dp"
+                android:paddingHorizontal="0dp"
+                android:text="+ Selengkapnya"
+                android:textColor="#0079C2"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/tvProductDescription2"
+                app:layout_constraintTop_toBottomOf="@id/tvProductDescription2" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerService"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textButton" />
+
+            <TextView
+                android:id="@+id/tvTitlePenyajian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Saran Penyajian"
+                android:textColor="#242628"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerService" />
+
+            <TextView
+                android:id="@+id/tvOptionPenyajian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="Pilih 1"
+                android:textColor="#656E75"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitlePenyajian"
+                app:layout_constraintStart_toEndOf="@id/tvTitlePenyajian" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvListPenyajian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/tvTitlePenyajian"
+                app:layout_constraintTop_toBottomOf="@id/tvTitlePenyajian" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/rvListPenyajian" />
+
+            <TextView
+                android:id="@+id/tvTitleNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans_bold"
+                android:text="Catatan Pesanan"
+                android:textColor="#242628"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/dividerNote" />
+
+            <TextView
+                android:id="@+id/tvSubtitleNote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/dm_sans"
+                android:text="(Opsional)"
+                android:textColor="#656E75"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/tvTitleNote"
+                app:layout_constraintStart_toEndOf="@id/tvTitleNote" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textField"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:hint="Catatan Pesanan"
+                android:textColorHint="#989898"
+                app:boxStrokeColor="#808990"
+                app:hintTextColor="#242628"
+                app:layout_constraintStart_toStartOf="@id/tvTitleNote"
+                app:layout_constraintTop_toBottomOf="@id/tvTitleNote">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/dm_sans" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/dividerUpsellProduct2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:dividerColor="#F6F6F6"
+                app:dividerThickness="8dp"
+                app:layout_constraintTop_toBottomOf="@id/textField" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/upsellSectionContainer2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="24dp"
+                app:layout_constraintTop_toBottomOf="@id/dividerUpsellProduct2">
+
+                <TextView
+                    android:id="@+id/tvTitleUpsellProduct2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="16dp"
+                    android:fontFamily="@font/dm_sans_bold"
+                    android:text="Produk Serupa Lainnya"
+                    android:textColor="#242628"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvListUpsellProduct2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintStart_toStartOf="@id/tvTitleUpsellProduct2"
+                    app:layout_constraintTop_toBottomOf="@id/tvTitleUpsellProduct2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!--Fixed Action Button-->
+    <LinearLayout
+        android:id="@+id/footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/outline_border"
+        android:elevation="16dp"
+        android:gravity="center"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconButtonCart"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Button"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/shopping_cart"
+            app:iconSize="24dp"
+            app:iconTint="#808990"
+            app:strokeColor="#e8ebec"
+            app:strokeWidth="2dp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:contentDescription="Button"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="+ Keranjang"
+            android:textSize="16sp"
+            app:backgroundTint="#0079C2"
+            app:cornerRadius="8dp"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

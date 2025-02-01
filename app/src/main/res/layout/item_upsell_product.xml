@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    app:cardCornerRadius="8dp"
+    app:strokeColor="#F6F6F6">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="104dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingBottom="8dp">
+
+        <ImageView
+            android:id="@+id/ivProductUpsell"
+            android:layout_width="104dp"
+            android:layout_height="104dp"
+            android:src="@drawable/image_product"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleUpsellProduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:lineHeight="16sp"
+            android:text="Greenfields Yoghurt Strawberry Cup 500 gr"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/ivProductUpsell" />
+
+        <TextView
+            android:id="@+id/tvUpsellProductVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/dm_sans"
+            android:text="500 gr / pcs"
+            android:textColor="#808990"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvTitleUpsellProduct"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleUpsellProduct" />
+
+        <TextView
+            android:id="@+id/tvUpsellProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:lineHeight="16sp"
+            android:text="Rp45.000"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUpsellProductVariant"
+            app:layout_constraintTop_toBottomOf="@id/tvUpsellProductVariant" />
+
+        <TextView
+            android:id="@+id/tvDiscountPriceUpsell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/dm_sans"
+            android:text="@string/discountPrice"
+            android:textColor="#808990"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUpsellProductPrice"
+            app:layout_constraintTop_toBottomOf="@+id/tvUpsellProductPrice" />
+
+        <TextView
+            android:id="@+id/tvDiscountPriceVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="24%"
+            android:textColor="#dc2626"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/tvDiscountPriceUpsell"
+            app:layout_constraintStart_toEndOf="@id/tvDiscountPriceUpsell"
+            app:layout_constraintTop_toTopOf="@id/tvDiscountPriceUpsell" />
+
+        <com.google.android.material.button.MaterialButton
+            style="@style/Widget.Material3.Button.OutlinedButton.Icon"
+            android:id="@+id/buttonUpsellProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:contentDescription="Button"
+            android:fontFamily="@font/dm_sans_bold"
+            android:minHeight="32dp"
+            android:text="+ Tambah"
+            android:textSize="10sp"
+            android:textColor="#0079C2"
+            app:strokeColor="#0079C2"
+            app:cornerRadius="4dp"
+            app:layout_constraintStart_toStartOf="@id/tvDiscountPriceUpsell"
+            app:layout_constraintTop_toBottomOf="@id/tvDiscountPriceUpsell" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
