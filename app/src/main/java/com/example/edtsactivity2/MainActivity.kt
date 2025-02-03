@@ -20,8 +20,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var penyajianRecyclerView: RecyclerView
 
     // Lists of Upsell Products
-    private lateinit var listUpsellProduct1: List<UpsellProduct1>
-    private lateinit var listUpsellProduct2: List<UpsellProduct2>
+    private lateinit var listUpsellProduct: List<UpsellProduct>
+    private lateinit var listUpsellProduct2: List<UpsellProduct>
 
     // RecyclerViews for Upsell Products
     private lateinit var upsellRecyclerView1: RecyclerView
@@ -47,8 +47,8 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Data preparation for Upsell Product 1
-        listUpsellProduct1 = mutableListOf(
-            UpsellProduct1(
+        listUpsellProduct = mutableListOf(
+            UpsellProduct(
                 R.drawable.upsell_product_1,
                 "Greenfields Yoghurt Strawberry Cup 500 gr",
                 "500 gr / pcs",
@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp50.400",
                 "12%"
             ),
-            UpsellProduct1(
+            UpsellProduct(
                 R.drawable.upsell_product_2,
                 "Greenfields Susu Fresh Milk Low Fat Caffe Latte 320 ml",
                 "320 ml / pcs",
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp50.400",
                 "12%"
             ),
-            UpsellProduct1(
+            UpsellProduct(
                 R.drawable.upsell_product_3,
                 "Greenfields Susu UHT Cokelat 105 ml",
                 "150 ml / pcs",
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp16.000",
                 "20%"
             ),
-            UpsellProduct1(
+            UpsellProduct(
                 R.drawable.upsell_product_4,
                 "Greenfields Susu UHT Vanilla Chamomile Extra Chill 200 ml",
                 "200 ml / pcs",
@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp16.000",
                 "20%"
             ),
-            UpsellProduct1(
+            UpsellProduct(
                 R.drawable.upsell_product_5,
                 "Greenfields Yoghurt Strawberry Pouch 110 gr",
                 "110 gr / pcs",
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity() {
 
         // Data preparation for Upsell Product 2
         listUpsellProduct2 = mutableListOf(
-            UpsellProduct2(
+            UpsellProduct(
                 R.drawable.upsell2_produk_1,
                 "Greenfields Yoghurt Strawberry Cup 500 gr",
                 "500 gr / pcs",
@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp50.400",
                 "12%"
             ),
-            UpsellProduct2(
+            UpsellProduct(
                 R.drawable.upsell2_produk_2,
                 "Greenfields Susu Fresh Milk Low Fat Caffe Latte 320 ml",
                 "320 ml / pcs",
@@ -108,7 +108,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp50.400",
                 "12%"
             ),
-            UpsellProduct2(
+            UpsellProduct(
                 R.drawable.upsell2_produk_3,
                 "Greenfields Susu UHT Cokelat 105 ml",
                 "150 ml / pcs",
@@ -116,7 +116,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp16.000",
                 "20%"
             ),
-            UpsellProduct2(
+            UpsellProduct(
                 R.drawable.upsell2_produk_4,
                 "Greenfields Susu UHT Vanilla Chamomile Extra Chill 200 ml",
                 "200 ml / pcs",
@@ -124,7 +124,7 @@ class MainActivity : AppCompatActivity() {
                 "Rp16.000",
                 "20%"
             ),
-            UpsellProduct2(
+            UpsellProduct(
                 R.drawable.upsell2_produk_5,
                 "Greenfields Yoghurt Strawberry Pouch 110 gr",
                 "110 gr / pcs",
@@ -152,7 +152,7 @@ class MainActivity : AppCompatActivity() {
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
         val adapterUpsellProduct1 = GenericUpsellProductAdapter(
-            listUpsellProduct = listUpsellProduct1,
+            listUpsellProduct = listUpsellProduct,
             onProductSelected = { selectedProduct ->
                 // Handle item click (e.g., show details of the selected product)
                 Toast.makeText(
