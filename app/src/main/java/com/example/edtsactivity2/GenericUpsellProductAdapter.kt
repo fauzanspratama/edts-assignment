@@ -1,13 +1,9 @@
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.edtsactivity2.R
 import com.example.edtsactivity2.UpsellProduct
+import com.example.edtsactivity2.databinding.ItemUpsellProductBinding
 
 class GenericUpsellProductAdapter<T : UpsellProduct>(
     private val listUpsellProduct: List<T>,
@@ -15,31 +11,23 @@ class GenericUpsellProductAdapter<T : UpsellProduct>(
     private val onButtonClicked: (T) -> Unit
 ) : RecyclerView.Adapter<GenericUpsellProductAdapter.ViewHolder<T>>() {
 
-    // ViewHolder class to bind the views
-    class ViewHolder<T : UpsellProduct>(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivProductUpsell: ImageView = itemView.findViewById(R.id.ivProductUpsell)
-        val tvTitleUpsellProduct: TextView = itemView.findViewById(R.id.tvTitleUpsellProduct)
-        val tvUpsellProductVariant: TextView = itemView.findViewById(R.id.tvUpsellProductVariant)
-        val tvUpsellProductPrice: TextView = itemView.findViewById(R.id.tvUpsellProductPrice)
-        val tvDiscountPrice: TextView = itemView.findViewById(R.id.tvDiscountPriceVariant)
-        val tvDiscountPriceVariant: TextView = itemView.findViewById(R.id.tvDiscountPriceVariant)
-        val buttonUpsellProduct: Button = itemView.findViewById(R.id.buttonUpsellProduct)
-
+    // ViewHolder class to bind the views using ViewBinding
+    class ViewHolder<T : UpsellProduct>(val binding: ItemUpsellProductBinding) : RecyclerView.ViewHolder(binding.root) {
+        // Bind data to views
         fun bind(item: T) {
-            ivProductUpsell.setImageResource(item.imageProduct)
-            tvTitleUpsellProduct.text = item.titleProduct
-            tvUpsellProductVariant.text = item.variantProduct
-            tvUpsellProductPrice.text = item.priceProduct
-            tvDiscountPrice.text = item.discountPrice
-            tvDiscountPriceVariant.text = item.discountChip
+            binding.ivProductUpsell.setImageResource(item.imageProduct)
+            binding.tvTitleUpsellProduct.text = item.titleProduct
+            binding.tvUpsellProductVariant.text = item.variantProduct
+            binding.tvUpsellProductPrice.text = item.priceProduct
+            binding.tvDiscountPriceUpsell.text = item.discountPrice
+            binding.tvDiscountPriceVariant.text = item.discountChip
         }
     }
 
-    // Create ViewHolder and inflate the layout
+    // Create ViewHolder and inflate the layout using ViewBinding
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<T> {
-        val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_upsell_product, parent, false)
-        return ViewHolder(itemView)
+        val binding = ItemUpsellProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ViewHolder(binding)
     }
 
     // Get the total number of items
@@ -60,7 +48,7 @@ class GenericUpsellProductAdapter<T : UpsellProduct>(
         }
 
         // Handle button click (e.g., add product to cart)
-        holder.buttonUpsellProduct.setOnClickListener {
+        holder.binding.buttonUpsellProduct.setOnClickListener {
             onButtonClicked(currentProduct)  // Pass the product when button is clicked
         }
     }

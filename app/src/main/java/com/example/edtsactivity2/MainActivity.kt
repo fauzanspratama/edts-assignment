@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.edtsactivity2.databinding.ActivityMainBinding
 import com.example.edtsactivity2.utils.CustomPaddingItemDecoration
 
 class MainActivity : AppCompatActivity() {
@@ -26,10 +27,16 @@ class MainActivity : AppCompatActivity() {
     private lateinit var upsellRecyclerView1: RecyclerView
     private lateinit var upsellRecyclerView2: RecyclerView
 
+    // View Binding reference
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+
+        // Initialize View Binding
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         // Data preparation for Service List
         listService = mutableListOf(
@@ -128,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         )
 
         // Initialize RecyclerView for Service List
-        penyajianRecyclerView = findViewById(R.id.rvListPenyajian)
+        penyajianRecyclerView = binding.rvListPenyajian
         penyajianRecyclerView.layoutManager = LinearLayoutManager(this)
 
         adapterService = AdapterService(listService) { selectedPenyajian ->
@@ -139,9 +146,8 @@ class MainActivity : AppCompatActivity() {
 
         penyajianRecyclerView.adapter = adapterService
 
-
         // Initialize RecyclerView for Upsell Product 1
-        upsellRecyclerView1 = findViewById(R.id.rvListUpsellProduct1)
+        upsellRecyclerView1 = binding.rvListUpsellProduct1
         upsellRecyclerView1.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
@@ -165,7 +171,7 @@ class MainActivity : AppCompatActivity() {
         upsellRecyclerView1.adapter = adapterUpsellProduct1
 
         // Initialize RecyclerView for Upsell Product 2
-        upsellRecyclerView2 = findViewById(R.id.rvListUpsellProduct2)
+        upsellRecyclerView2 = binding.rvListUpsellProduct2
         upsellRecyclerView2.layoutManager =
             LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
 
