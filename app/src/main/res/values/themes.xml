@@ -4,6 +4,7 @@
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
         <item name="android:statusBarColor">@color/white</item>
+        <item name="android:fitsSystemWindows">true</item>
     </style>
 
     <style name="Theme.EDTSActivity2" parent="Base.Theme.EDTSActivity2" />
