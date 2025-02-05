@@ -330,16 +330,16 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:hint="Catatan Pesanan"
                 android:textColorHint="#989898"
                 app:boxStrokeColor="#808990"
-                app:hintTextColor="#242628"
+                app:hintEnabled="false"
                 app:layout_constraintStart_toStartOf="@id/tvTitleNote"
                 app:layout_constraintTop_toBottomOf="@id/tvTitleNote">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:hint="Catatan Pesanan"
                     android:fontFamily="@font/dm_sans" />
             </com.google.android.material.textfield.TextInputLayout>
 
