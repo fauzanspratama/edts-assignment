@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.BottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/outline_border"
+    android:padding="36dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Drag handle for accessibility -->
+        <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+            android:id="@+id/drag_handle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Product Image -->
+        <ImageView
+            android:id="@+id/ivProductUpsell"
+            android:layout_width="100dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            android:src="@drawable/upsell_product_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/drag_handle" />
+
+        <!-- Product Title -->
+        <TextView
+            android:id="@+id/tvTitleUpsellProduct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dm_sans_bold"
+            android:layout_marginStart="16dp"
+            android:text="Greenfields Keju Mozzarella 200 gr"
+            android:textColor="#242628"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/ivProductUpsell"
+            app:layout_constraintTop_toTopOf="@id/ivProductUpsell" />
+
+        <!-- Product Variant -->
+        <TextView
+            android:id="@+id/tvUpsellProductVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/dm_sans"
+            android:text="200 gr / pack"
+            android:textColor="#808990"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tvTitleUpsellProduct"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleUpsellProduct" />
+
+        <!-- Regular Price -->
+        <TextView
+            android:id="@+id/tvUpsellProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:lineHeight="24sp"
+            android:text="Rp97.300"
+            android:textColor="#242628"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tvUpsellProductVariant"
+            app:layout_constraintTop_toBottomOf="@id/tvUpsellProductVariant" />
+
+        <!-- Discount Price -->
+        <TextView
+            android:id="@+id/tvDiscountPriceUpsell"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/dm_sans"
+            android:text="@string/discountPrice"
+            android:textColor="#808990"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/tvUpsellProductPrice"
+            app:layout_constraintTop_toBottomOf="@id/tvUpsellProductPrice" />
+
+        <!-- Discount Chip -->
+        <TextView
+            android:id="@+id/tvDiscountPriceVariant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="24%"
+            android:textColor="#dc2626"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvDiscountPriceUpsell"
+            app:layout_constraintStart_toEndOf="@+id/tvDiscountPriceUpsell"
+            app:layout_constraintTop_toTopOf="@+id/tvDiscountPriceUpsell" />
+
+        <!-- Add to Cart Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="Button"
+            android:fontFamily="@font/dm_sans_bold"
+            android:text="+ Keranjang"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:elevation="12dp"
+            app:backgroundTint="#0079C2"
+            app:cornerRadius="8dp"
+            app:elevation="12sp"
+            app:iconSize="24dp"
+            app:iconTint="#FFFFFF"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivProductUpsell" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

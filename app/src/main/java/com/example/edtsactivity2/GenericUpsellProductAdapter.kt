@@ -2,19 +2,19 @@
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.edtsactivity2.UpsellProduct
 import com.example.edtsactivity2.databinding.ItemUpsellProductBinding
 
-class GenericUpsellProductAdapter<T : UpsellProduct>(
-    private val listUpsellProduct: List<T>,
-    private val onProductSelected: (T) -> Unit,
-    private val onButtonClicked: (T) -> Unit
-) : RecyclerView.Adapter<GenericUpsellProductAdapter.ViewHolder<T>>() {
+// Generic adapter for UpsellProduct
+class GenericUpsellProductAdapter(
+    private val listUpsellProduct: List<UpsellProduct>, // No need for generic T here, as it's always UpsellProduct
+    private val onProductSelected: (UpsellProduct) -> Unit,
+    private val onButtonClicked: (UpsellProduct) -> Unit
+) : RecyclerView.Adapter<GenericUpsellProductAdapter.ViewHolder>() {
 
     // ViewHolder class to bind the views using ViewBinding
-    class ViewHolder<T : UpsellProduct>(val binding: ItemUpsellProductBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(val binding: ItemUpsellProductBinding) : RecyclerView.ViewHolder(binding.root) {
         // Bind data to views
-        fun bind(item: T) {
+        fun bind(item: UpsellProduct) {
             binding.ivProductUpsell.setImageResource(item.imageProduct)
             binding.tvTitleUpsellProduct.text = item.titleProduct
             binding.tvUpsellProductVariant.text = item.variantProduct
@@ -25,7 +25,7 @@ class GenericUpsellProductAdapter<T : UpsellProduct>(
     }
 
     // Create ViewHolder and inflate the layout using ViewBinding
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder<T> {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemUpsellProductBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
@@ -36,7 +36,7 @@ class GenericUpsellProductAdapter<T : UpsellProduct>(
     }
 
     // Bind the data to the view elements in each row
-    override fun onBindViewHolder(holder: ViewHolder<T>, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentProduct = listUpsellProduct[position]
 
         // Bind the product data to the views

@@ -1,6 +1,7 @@
 package com.example.edtsactivity2
 
 import GenericUpsellProductAdapter
+import UpsellProduct
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -154,17 +155,13 @@ class MainActivity : AppCompatActivity() {
         val adapterUpsellProduct1 = GenericUpsellProductAdapter(
             listUpsellProduct = listUpsellProduct,
             onProductSelected = { selectedProduct ->
-                // Handle item click (e.g., show details of the selected product)
-                Toast.makeText(
-                    this,
-                    "Selected Product: ${selectedProduct.titleProduct}",
-                    Toast.LENGTH_SHORT
-                ).show()
+                // Show the bottom sheet with the selected product's details
+                val miniDetailFragment = MiniDetailFragment.newInstance(selectedProduct)
+                miniDetailFragment.show(supportFragmentManager, miniDetailFragment.tag)
             },
             onButtonClicked = { product ->
-                // Handle "Add to Cart" button click (e.g., add product to cart)
-                Toast.makeText(this, "Added to cart: ${product.titleProduct}", Toast.LENGTH_SHORT)
-                    .show()
+                // Handle "Add to Cart" button click
+                Toast.makeText(this, "Added to cart: ${product.titleProduct}", Toast.LENGTH_SHORT).show()
             }
         )
 
